@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Postagens </title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div class="painel">
+        <div class="cabecalho">
+            <h1> Lista de Posts</h1>
+            <a href="index.html" class="botao"> Fazer Nova Postagem </a>
+        </div>
+        <div class="conteudo">
+            <input type="text" id="valor" placeholder="Digite a busca">
+            <button onclick="buscar()" class="enviar"> Buscar </button>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+                integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script>
+
+                function buscar() {
+
+                    var valor = $("#valor").val();
+
+                    $.ajax({
+                        url: "fazerbusca.php",
+                        method: "GET",
+                        data: { busca: valor},
+                        success: function(data){
+                            $("#resultado").html(data);
+                            }
+
+
+                    });
+                }
+
+                $(document).ready(function(){
+                    buscar();
+                })
+
+            </script>
+
+
+            <div id="resultado">
+
+            </div>
+
+
+        </div>
+        <div class="rodape"></div>
+    </div>
+
+
+</body>
+
+</html>
