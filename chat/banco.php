@@ -1,8 +1,8 @@
 <?php
-    $nomeServidor = "localhost";
-    $username = "root";
-    $senha = "";
-    $nomeBanco = "rede_banco";
+    $nomeServidor = "sql301.infinityfree.com"; //localhost
+    $username = "if0_35249671"; //root
+    $senha = "sXPJtGwRzc4OREB"; //""
+    $nomeBanco = "if0_35249671_rede_banco"; //rede banco
 
 
     $conexao = new mysqli($nomeServidor, $username, $senha, $nomeBanco);
